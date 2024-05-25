@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>音频转换测试</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome CSS-->
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+  <!-- Custom Font Icons CSS-->
+  <link rel="stylesheet" href="css/landy-iconfont.css">
+  <!-- Google fonts - Open Sans-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800">
+  <!-- owl carousel-->
+  <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css">
+  <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css">
+  <!-- theme stylesheet-->
+  <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+  <!-- Custom stylesheet - for your changes-->
+  <link rel="stylesheet" href="css/function1.css">
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=STZhongsong">
+  <link rel="icon" type="image/png"
+    href="img/DALL·E 2024-05-06 10.58.08 - A simple and minimalistic logo design for 'UnVC', a voice anti-spoofing technology, incorporating a scientific and technological aesthetic. The logo s.png">
+  <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+        <style>
+          .button-group button span {
+            letter-spacing: -0.6px; /* 控制字间距，可以根据需要调整 */
+            font-weight: bold; /* 加粗文字 */
+          }
+        </style>
+        <style>
+          .upload-area span {
+            letter-spacing: -0.6px; /* 控制字间距，可以根据需要调整 */
+           
+            font-size: 13px;
+          }
+        </style>
+         <style>
+         
+        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      .background-section {
+        background-image: url('1.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        position: relative;
+        z-index: 1;
+      }
+  
+      .content-section {
+        margin-top: -250px; /* 调整此值以实现所需的重叠效果 */
+        position: relative;
+        z-index: 2;
+        background: rgba(255, 255, 255, 0.9); /* 半透明背景 */
+        padding: 20px;
+        border-radius: 10px;
+      }
+  
+      .upload-area {
+        padding: 20px;
+        border: 2px dashed #ccc;
+        text-align: center;
+        margin-top: 20px;
+        border-radius: 10px;
+      }
+  
+      .upload-area p {
+        margin: 10px 0;
+      }
+    </style>
+    <style>#uploadWaveform {
+      margin-top: 5px; /* 调整波形顶部与文字之间的间距 */
+      margin-bottom: 50px; /* 调整波形底部与文字之间的间距 */
+    }
+    </style>
+    <style>#downloadWaveform {
+      margin-top: 5px; /* 调整波形顶部与文字之间的间距 */
+      margin-bottom: 50px; /* 调整波形底部与文字之间的间距 */
+    }
+    </style>
+        
+  
+</head>
+
+
+<body>
+  <!-- navbar-->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg fixed-top"><a href="index.html" class="navbar-brand">Unvc</a>
+      <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler navbar-toggler-right"><span></span><span></span><span></span></button>
+      <div id="navbarSupportedContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto align-items-start align-items-lg-center">
+          <li class="nav-item"><a href="index.html" class="nav-link link-scroll">主页 </a></li>
+          <li class="nav-item"><a href="try.html" class="nav-link link-scroll">音视频防御测试 </a></li>
+          <li class="nav-item"><a href="function1.html" class="nav-link active">音频转换测试</a></li>
+        </ul>
+        <!-- <div class="navbar-text">
+          <a href="#" data-toggle="modal" data-target="#exampleModal"
+            class="btn btn-primary navbar-btn btn-shadow btn-gradient">Sign Up</a>
+        </div> -->
+      </div>
+    </nav>
+  </header>
+  <section class="background-section">
+    <div style="text-align: center; color: white; padding-top: 100px;">
+    </div>
+  </section>
+  <!-- Modal-->
+  <section class="content-section">
+    <div class="container">
+      <div class="row block">
+        <div class="col-lg-9">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./">主页</a></li>
+            <li class="breadcrumb-item">音视频防御测试</li>
+            <li class="breadcrumb-item">音频转换测试</li>
+          </ul>
+          <h1>音频转换测试</h1>
+          <p class="lead">此功能针对上传的音频,</p>
+
+        </div>
+      </div>
+
+      <div class="audio-manager">
+        <div class="upload-section">
+          <!-- Upload Area -->
+          <div class="upload-area" style="text-align: center; padding: 20px; flex-grow: 1;background-color: rgba(205, 230, 238, 0.2);border: 1px dashed rgba(205, 230, 238, 1);">
+            <input type="file" accept="video/*" id="audioInput" style="display: none;" />
+            
+            <span >将UnVC防御后的音频或视频拖拽至此处 或 点击「上传文件」按钮</span>
+            <span >支持: mp3、wav格式的音频，mp4格式的视频</span>
+            <span >请注意原文件中需要包含清晰的说话人声音</span>
+
+          <div id="uploadWaveform"></div>
+
+            <div class="button-group" style="margin-top: 20px;">
+              <button id="uploadBtn" onclick="document.getElementById('audioInput').click();">
+                <span>上传文件</span>
+                <div class="liquid"></div>
+              </button>
+              <div id="uploadDropdown" class="dropdown" style="display: none;">
+                <input type="file" accept="video/*" id="fileInput" style="display: none;">
+              </div>
+              <button onclick="playUploadAudio()">
+                <span>播放上传音频</span>
+                <div class="liquid"></div>
+              </button>
+            </div>
+          </div>
+          
+          
+
+          
+          
+        </div>
+
+        <div class="process-section">
+          <div id="wifi-loader" style="display: none;">
+            <svg class="circle-outer" viewBox="0 0 86 86">
+              <circle class="back" cx="43" cy="43" r="40"></circle>
+              <circle class="front" cx="43" cy="43" r="40"></circle>
+              <circle class="new" cx="43" cy="43" r="40"></circle>
+            </svg>
+            <svg class="circle-middle" viewBox="0 0 60 60">
+              <circle class="back" cx="30" cy="30" r="27"></circle>
+              <circle class="front" cx="30" cy="30" r="27"></circle>
+            </svg>
+            <svg class="circle-inner" viewBox="0 0 34 34">
+              <circle class="back" cx="17" cy="17" r="14"></circle>
+              <circle class="front" cx="17" cy="17" r="14"></circle>
+            </svg>
+          </div>
+        </div>
+
+        <div class="download-section">
+          <div class="upload-area" style="text-align: center; padding: 20px; flex-grow: 1;background-color: rgba(205, 230, 238, 0.2);border: 1px dashed rgba(205, 230, 238, 1);">
+            <input type="file" accept="video/*" id="audioInput" style="display: none;" />
+            
+            <span >音频转换后的音频或视频将会呈现在此处</span><br>
+            <span>请点击「下载文件」按钮保存至本地</span>
+            <span >您可点击「播放下载音频」按钮收听对抗生成结果</span>
+
+            <div id="downloadWaveform"></div>
+
+          <div class="button-group" style="margin-top: 20px;">
+            <button id="downloadBtn">
+              <span>下载文件</span>
+              <div class="liquid"></div>
+            </button>
+            <button onclick="playDownloadAudio()">
+              <span>播放下载音频</span>
+              <div class="liquid"></div>
+            </button>
+          </div>
+          </div>
+          
+          
+        </div>
+        <button id="UnVCButton" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 50px; font-weight: bold; letter-spacing: -0.6px;">
+          <span>音频转换</span>
+          <div class="liquid"></div>
+        </button>
+      </div>
+      </div>
+
+
+
+  </section>
+  <!-- <section class="newsletter bg-gray">
+    <div class="container text-center">
+      <h2>Subscribe to Newsletter</h2>
+      <p class="lead">There are many variation passages of lorem ipsum, but the majority have</p>
+      <div class="form-holder has-shadow">
+        <form id="newsletterForm" action="#">
+          <div class="form-group">
+            <input type="email" name="email" id="email" placeholder="Enter Your Email Address">
+            <button type="submit" class="btn btn-primary btn-gradient submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section> -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6"><a href="#" class="brand">Unvc</a>
+          <ul class="contact-info list-unstyled">
+            <li><a href="mailto:sales@landy.com">Sales@Landy.com</a></li>
+            <li><a href="tel:123456789">+00 123 456 789</a></li>
+          </ul>
+          <ul class="social-icons list-inline">
+            <li class="list-inline-item"><a href="#" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="Instagram"><i
+                  class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="Pinterest"><i
+                  class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Selected Cases</h5>
+          <ul class="links list-unstyled">
+            <li> <a href="#">Guess Conntect</a></li>
+            <li> <a href="#">Postly</a></li>
+            <li> <a href="#">Iris Vor Arnim</a></li>
+            <li> <a href="#">Yapital</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Selected Cases</h5>
+          <ul class="links list-unstyled">
+            <li> <a href="#">Guess Conntect</a></li>
+            <li> <a href="#">Postly</a></li>
+            <li> <a href="#">Iris Vor Arnim</a></li>
+            <li> <a href="#">Yapital</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Selected Cases</h5>
+          <ul class="links list-unstyled">
+            <li> <a href="#">Guess Conntect</a></li>
+            <li> <a href="#">Postly</a></li>
+            <li> <a href="#">Iris Vor Arnim</a></li>
+            <li> <a href="#">Yapital</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyrights">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <p>&copy; Landy.com. All rights reserved. </p>
+          </div>
+          <div class="col-md-5 text-right">
+            <p><a target="_blank" href="http://www.mobanwang.com/" title="网页模板" class="external">网页模板</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Javascript files-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"> </script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+  <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="js/front.js"></script>
+  <script src="https://unpkg.com/wavesurfer.js"></script>
+  <script>
+    let uploadWaveSurfer, downloadWaveSurfer;
+
+    document.addEventListener('DOMContentLoaded', function () {
+      uploadWaveSurfer = WaveSurfer.create({
+        container: '#uploadWaveform',
+        waveColor: 'violet',
+        progressColor: 'purple'
+      });
+      uploadWaveSurfer.load('examples_audios/ori/p225_002.wav');
+
+      downloadWaveSurfer = WaveSurfer.create({
+        container: '#downloadWaveform',
+        waveColor: 'darkblue',
+        progressColor: 'blue'
+      });
+      downloadWaveSurfer.load('examples_audios/defend/a google adv.wav');
+    });
+
+    function playUploadAudio() {
+      uploadWaveSurfer.playPause();
+    }
+
+    function playDownloadAudio() {
+      downloadWaveSurfer.playPause();
+    }
+
+    document.getElementById('UnVCButton').addEventListener('click', function () {
+        document.getElementById('wifi-loader').style.display = 'flex';
+      });
+
+  </script>
+</body>
+
+</html>

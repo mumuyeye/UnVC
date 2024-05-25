@@ -1,0 +1,373 @@
+.button-group {
+    display: flex;
+    justify-content: center;
+    /* 水平居中 */
+    align-items: flex-start;
+    /* 垂直方向上居上对齐 */
+    gap: 4px;
+    margin-bottom: 10px;
+    width: 100%;
+    /* 确保按钮组占满容器的宽度 */
+}
+
+button {
+    position: relative;
+    padding: 10px 20px;
+    /* 调整按钮内边距以使其变小 */
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-radius: 20px;
+    /* 调整边框半径以匹配新的尺寸 */
+    border: none;
+}
+
+button span {
+    position: relative;
+    color: #fff;
+    font-family: Arial;
+    letter-spacing: 4px;
+    /* 调整字母间距以匹配新的按钮尺寸 */
+    z-index: 1;
+}
+
+button .liquid {
+    position: absolute;
+    top: -40px;
+    /* 调整位置使其适应新的按钮尺寸 */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    /* 调整液体的高度 */
+    background: #4973ff;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+    transition: .5s;
+}
+
+button .liquid::after,
+button .liquid::before {
+    content: '';
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: #fff;
+}
+
+button .liquid::before {
+    border-radius: 45%;
+    background: rgba(20, 20, 20, 1);
+    animation: animate 5s linear infinite;
+}
+
+button .liquid::after {
+    border-radius: 40%;
+    background: rgba(20, 20, 20, .5);
+    animation: animate 10s linear infinite;
+}
+
+button:hover .liquid {
+    top: -60px;
+    /* 调整悬停效果的位置 */
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+
+.audio-manager {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #e0e0e0; */
+    padding: 1px;
+    border-radius: 1px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    position: relative;
+    padding-bottom: 1px;
+}
+
+.upload-section,
+.download-section {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    border-radius: 50px;
+    /* 保持圆角样式 */
+    background: #ffffff;
+    /* 背景颜色 */
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+
+    width: 600px;
+    /* 调整宽度 */
+    height: 400px;
+    /* 调整高度 */
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.process-section {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    /* 垂直居中 */
+    margin: 0 1px;
+    /* 调整外边距使其变小 */
+    padding: 1px;
+    /* 调整内边距使其变小 */
+    border-radius: 1px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    /* 垂直排列子元素 */
+    justify-content: center;
+    align-items: center;
+    /* 水平居中 */
+    max-width: 150px;
+    /* 限制最大宽度使其变窄 */
+}
+
+button#UnVCButton {
+    position: absolute;
+    bottom: 304px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    /* 调整内边距使其变小 */
+    font-size: 16px;
+    /* 调整字体大小使其变小 */
+    border-radius: 10px;
+    /* 调整边框半径 */
+    background-color: #4a90e2;
+    /* 按钮背景颜色 */
+    color: #fff;
+    /* 字体颜色 */
+    text-transform: none;
+    /* 确保文本未被转换为大写 */
+}
+
+#uploadWaveform,
+#downloadWaveform {
+    height: 100px;
+    width: 100%;
+    max-width: 500px;
+    /* 示例背景颜色 */
+    border-radius: 10px;
+    /* 可选：添加圆角 */
+    margin-top: 60px;
+}
+
+#wifi-loader {
+    --background: #62abff;
+    --front-color: #4f29f0;
+    --back-color: #c3c8de;
+    --text-color: #414856;
+    width: 64px;
+    height: 64px;
+    border-radius: 50px;
+    position: absolute;
+    /* 使用绝对定位 */
+    top: 45%;
+    /* 距离顶部50% */
+    left: 47%;
+    /* 距离左侧50% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wifi-loader svg {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wifi-loader svg circle {
+    position: absolute;
+    fill: none;
+    stroke-width: 6px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform: rotate(-100deg);
+    transform-origin: center;
+}
+
+#wifi-loader svg circle.back {
+    stroke: var(--back-color);
+}
+
+#wifi-loader svg circle.front {
+    stroke: var(--front-color);
+}
+
+#wifi-loader svg.circle-outer {
+    height: 86px;
+    width: 86px;
+}
+
+#wifi-loader svg.circle-outer circle {
+    stroke-dasharray: 62.75 188.25;
+}
+
+#wifi-loader svg.circle-outer circle.back {
+    animation: circle-outer135 1.8s ease infinite 0.3s;
+}
+
+#wifi-loader svg.circle-outer circle.front {
+    animation: circle-outer135 1.8s ease infinite 0.15s;
+}
+
+#wifi-loader svg.circle-middle {
+    height: 60px;
+    width: 60px;
+}
+
+#wifi-loader svg.circle-middle circle {
+    stroke-dasharray: 42.5 127.5;
+}
+
+#wifi-loader svg.circle-middle circle.back {
+    animation: circle-middle6123 1.8s ease infinite 0.25s;
+}
+
+#wifi-loader svg.circle-middle circle.front {
+    animation: circle-middle6123 1.8s ease infinite 0.1s;
+}
+
+#wifi-loader svg.circle-inner {
+    height: 34px;
+    width: 34px;
+}
+
+#wifi-loader svg.circle-inner circle {
+    stroke-dasharray: 22 66;
+}
+
+#wifi-loader svg.circle-inner circle.back {
+    animation: circle-inner162 1.8s ease infinite 0.2s;
+}
+
+#wifi-loader svg.circle-inner circle.front {
+    animation: circle-inner162 1.8s ease infinite 0.05s;
+}
+
+#wifi-loader .text {
+    position: absolute;
+    bottom: -40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: lowercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+}
+
+#wifi-loader .text::before,
+#wifi-loader .text::after {
+    content: attr(data-text);
+}
+
+#wifi-loader .text::before {
+    color: var(--text-color);
+}
+
+#wifi-loader .text::after {
+    color: var(--front-color);
+    animation: text-animation76 3.6s ease infinite;
+    position: absolute;
+    left: 0;
+}
+
+@keyframes circle-outer135 {
+    0% {
+        stroke-dashoffset: 25;
+    }
+
+    25% {
+        stroke-dashoffset: 0;
+    }
+
+    65% {
+        stroke-dashoffset: 301;
+    }
+
+    80% {
+        stroke-dashoffset: 276;
+    }
+
+    100% {
+        stroke-dashoffset: 276;
+    }
+}
+
+@keyframes circle-middle6123 {
+    0% {
+        stroke-dashoffset: 17;
+    }
+
+    25% {
+        stroke-dashoffset: 0;
+    }
+
+    65% {
+        stroke-dashoffset: 204;
+    }
+
+    80% {
+        stroke-dashoffset: 187;
+    }
+
+    100% {
+        stroke-dashoffset: 187;
+    }
+}
+
+@keyframes circle-inner162 {
+    0% {
+        stroke-dashoffset: 9;
+    }
+
+    25% {
+        stroke-dashoffset: 0;
+    }
+
+    65% {
+        stroke-dashoffset: 106;
+    }
+
+    80% {
+        stroke-dashoffset: 97;
+    }
+
+    100% {
+        stroke-dashoffset: 97;
+    }
+}
+
+@keyframes text-animation76 {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+
+    50% {
+        clip-path: inset(0);
+    }
+
+    100% {
+        clip-path: inset(0 0 0 100%);
+    }
+}

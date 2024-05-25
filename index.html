@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>UnVC——语音伪造主动防御技术</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome CSS-->
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+  <!-- Custom Font Icons CSS-->
+  <link rel="stylesheet" href="css/landy-iconfont.css">
+  <!-- Google fonts - Open Sans-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800">
+  <!-- owl carousel-->
+  <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css">
+  <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css">
+  <!-- theme stylesheet-->
+  <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+  <!-- Custom stylesheet - for your changes-->
+  <link rel="stylesheet" href="css/custom.css">
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="icon" type="image/png"
+    href="img/DALL·E 2024-05-06 10.58.08 - A simple and minimalistic logo design for 'UnVC', a voice anti-spoofing technology, incorporating a scientific and technological aesthetic. The logo s.png">
+  <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+
+<body>
+  <!-- navbar-->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg fixed-top"><a href="index.html" class="navbar-brand">Unvc</a>
+      <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler navbar-toggler-right"><span></span><span></span><span></span></button>
+      <div id="navbarSupportedContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto align-items-start align-items-lg-center">
+          <li class="nav-item"><a href="#about-us" class="nav-link link-scroll">关于我们</a></li>
+          <li class="nav-item"><a href="text.html" class="nav-link">样例展示</a></li>
+          <li class="nav-item"><a href="#features" class="nav-link link-scroll">功能展示</a></li>
+          <li class="nav-item"><a href="#testimonials" class="nav-link link-scroll">技术解析</a></li>
+        </ul>
+        <!-- <div class="navbar-text">
+          <a href="#" data-toggle="modal" data-target="#exampleModal"
+            class="btn btn-primary navbar-btn btn-shadow btn-gradient">Sign Up</a>
+        </div> -->
+      </div>
+    </nav>
+  </header>
+  <!-- Modal-->
+  <div id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    class="modal fade">
+    <div role="document" class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="exampleModalLabel" class="modal-title">Sign Up Modal</h5>
+          <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span
+              aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+          <form id="signupform" action="#">
+            <div class="form-group">
+              <label for="fullname">Full Name</label>
+              <input type="text" name="fullname" placeholder="Full Name" id="fullname">
+            </div>
+            <div class="form-group">
+              <label for="username">User Name</label>
+              <input type="text" name="username" placeholder="User Name" id="username">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="text" name="email" placeholder="Email Address" id="email">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="submit btn btn-primary btn-shadow btn-gradient">Signup</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="hero" class="hero hero-home bg-gray">
+    <div class="container">
+      <div class="row d-flex">
+        <div class="col-lg-6 text order-2 order-lg-1">
+          <h1>Unvc&mdash;语音伪造主动防御技术</h1>
+          <p class="hero-text">
+          <ul>
+            <li>研究可控隐私破坏技术，包括声纹匿名、声学特征及声道信息的破坏，实现声纹的可控隐私保护策略。</li>
+            <li>研究对抗攻击技术的鲁棒性，实现对抗样本在传输中（编解码、有损压缩等）以及常用信号处理下的鲁棒性。</li>
+            <li>研究对抗攻击技术的泛化性,实现在Unseen场景下的声纹保护。</li>
+          </ul>
+          </p>
+          <div class="CTA"><a href="#features" class="btn btn-primary btn-shadow btn-gradient link-scroll">了解更多
+            </a></div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2">
+          <img src="img/pad.png" alt="..." class="img-fluid" style="width: 70%; margin-left: 150px;">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="browser" class="browser">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="h3 mb-5">How it works</h2>
+          <div class="browser-mockup">
+            <div id="nav-tabContent" class="tab-content">
+              <div id="nav-first" role="tabpanel" aria-labelledby="nav-first-tab" class="tab-pane fade show active"><img
+                  src="img/preview-3.png" alt="..." class="img-fluid"></div>
+              <div id="nav-second" role="tabpanel" aria-labelledby="nav-second-tab" class="tab-pane fade"><img
+                  src="img/preview-2.png" alt="..." class="img-fluid"></div>
+              <div id="nav-third" role="tabpanel" aria-labelledby="nav-third-tab" class="tab-pane fade"><img
+                  src="img/preview-1.png" alt="..." class="img-fluid"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="myTab" role="tablist" class="nav nav-tabs">
+        <div class="row">
+          <div class="col-md-4"><a id="nav-first-tab" data-toggle="tab" href="#nav-first" role="tab"
+              aria-controls="nav-first" aria-expanded="true" class="nav-item nav-link active"> <span
+                class="number">1</span>Choose any website to turn into an interactive pinboard for feedback</a></div>
+          <div class="col-md-4"><a id="nav-second-tab" data-toggle="tab" href="#nav-second" role="tab"
+              aria-controls="nav-second" class="nav-item nav-link"> <span class="number">2</span>Choose any website to
+              turn into an interactive pinboard for feedback</a></div>
+          <div class="col-md-4"><a id="nav-third-tab" data-toggle="tab" href="#nav-third" role="tab"
+              aria-controls="nav-third" class="nav-item nav-link"> <span class="number">3</span>Choose any website to
+              turn into an interactive pinboard for feedback</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about-us" class="about-us bg-gray">
+    <div class="container">
+      <h2>关于我们</h2>
+      <div class="row">
+        <p class="lead col-lg-10">我们是来自武汉大学国家网络安全学院的团队,致力于研究UnVC-语音伪造主动防御技术。 </p>
+      </div><a href="#" class="btn btn-primary btn-shadow btn-gradient">Discover More</a>
+    </div>
+  </section>
+  <section id="features" class="features">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="text col-lg-6 order-2 order-lg-1">
+          <div class="icon"><img src="img/sound_guard.svg" alt="..." class="img-fluid" style="width: 120%;"></div>
+          <h4>音频防御</h4>
+          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+            in some form, by injected humour, or randomised words which don't look even slightly believable. </p><a
+            href="function1.html" class="btn btn-primary btn-shadow btn-gradient">功能详情</a>
+        </div>
+        <div class="image col-lg-6 order-1 order-lg-2"><img src="img/feature-1.png" alt="..." class="img-fluid"></div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="image col-lg-6"><img src="img/feature-2.png" alt="..." class="img-fluid"></div>
+        <div class="text col-lg-6">
+          <div class="icon"><img src="img/sound_trans.svg" alt="..." class="img-fluid" style="width: 120%;"></div>
+          <h4>视频防御</h4>
+          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+            in some form, by injected humour, or randomised words which don't look even slightly believable. </p><a
+            href="function3.html" class="btn btn-primary btn-shadow btn-gradient">功能详情</a>
+        </div>
+      </div>
+      <div class="row d-flex align-items-center">
+        <div class="text col-lg-6 order-2 order-lg-1">
+          <div class="icon"><img src="img/video_guard.svg" alt="..." class="img-fluid" style="width: 120%;"></div>
+          <h4>音视频防御测试</h4>
+          <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+            in some form, by injected humour, or randomised words which don't look even slightly believable. </p><a
+            href="try.html" class="btn btn-primary btn-shadow btn-gradient">功能详情</a>
+        </div>
+        <div class="image col-lg-6 order-1 order-lg-2"><img src="img/feature-3.png" alt="..." class="img-fluid"></div>
+      </div>
+    </div>
+  </section>
+  <section id="extra-features" class="extra-features bg-primary">
+    <div class="container text-center">
+      <header>
+        <h2>More great features </h2>
+        <div class="row">
+          <p class="lead col-lg-8 mx-auto">There are many variations of passages of Lorem Ipsum available, but the
+            majority have suffered alteration in some form.</p>
+        </div>
+      </header>
+      <div class="grid row">
+        <div class="item col-lg-4 col-md-6">
+          <div class="icon"> <i class="icon-diploma"></i></div>
+          <h3 class="h5">Lorem Ipsum Dolor</h3>
+          <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+        </div>
+        <div class="item col-lg-4 col-md-6">
+          <div class="icon"> <i class="icon-folder-1"></i></div>
+          <h3 class="h5">Lorem Ipsum Dolor</h3>
+          <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+        </div>
+        <div class="item col-lg-4 col-md-6">
+          <div class="icon"> <i class="icon-gears"></i></div>
+          <h3 class="h5">Lorem Ipsum Dolor</h3>
+          <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+        </div>
+        <div class="item col-lg-4 col-md-6">
+          <div class="icon"> <i class="icon-management"></i></div>
+          <h3 class="h5">Lorem Ipsum Dolor</h3>
+          <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+        </div>
+        <div class="item col-lg-4 col-md-6">
+          <div class="icon"> <i class="icon-pie-chart"></i></div>
+          <h3 class="h5">Lorem Ipsum Dolor</h3>
+          <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+        </div>
+        <div class="item col-lg-4 col-md-6">
+          <div class="icon"> <i class="icon-quality"></i></div>
+          <h3 class="h5">Lorem Ipsum Dolor</h3>
+          <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <header class="text-center no-margin-bottom">
+        <h2>Unvc技术解析</h2>
+        <p class="lead">多角度探究伪造语音主动防御方法</p>
+      </header>
+      <div class="owl-carousel owl-theme testimonials-slider">
+        <div class="item-holder">
+          <div class="item">
+            <div class="avatar"><img src="img/avatar-3.jpg" alt="..." class="img-fluid"></div>
+            <div class="text">
+              <div class="quote"><img src="img/quote.svg" alt="..." class="img-fluid"></div>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever</p><strong class="name">Jessica Watson</strong>
+            </div>
+          </div>
+        </div>
+        <div class="item-holder">
+          <div class="item">
+            <div class="avatar"><img src="img/avatar-5.jpg" alt="..." class="img-fluid"></div>
+            <div class="text">
+              <div class="quote"><img src="img/quote.svg" alt="..." class="img-fluid"></div>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever</p><strong class="name">Sarrah Wood</strong>
+            </div>
+          </div>
+        </div>
+        <div class="item-holder">
+          <div class="item">
+            <div class="avatar"><img src="img/avatar-3.jpg" alt="..." class="img-fluid"></div>
+            <div class="text">
+              <div class="quote"><img src="img/quote.svg" alt="..." class="img-fluid"></div>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever</p><strong class="name">Jessica Watson</strong>
+            </div>
+          </div>
+        </div>
+        <div class="item-holder">
+          <div class="item">
+            <div class="avatar"><img src="img/avatar-5.jpg" alt="..." class="img-fluid"></div>
+            <div class="text">
+              <div class="quote"><img src="img/quote.svg" alt="..." class="img-fluid"></div>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever</p><strong class="name">Sarrah Wood</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <section id="newsletter" class="newsletter bg-gray">
+    <div class="container text-center">
+      <h2>Subscribe to Newsletter</h2>
+      <p class="lead">There are many variation passages of lorem ipsum, but the majority have</p>
+      <div class="form-holder">
+        <form id="newsletterForm" action="#">
+          <div class="form-group">
+            <input type="email" name="email" id="email" placeholder="Enter Your Email Address">
+            <button type="submit" class="btn btn-primary btn-gradient submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section> -->
+  <div id="scrollTop">
+    <div class="d-flex align-items-center justify-content-end"><i class="fa fa-long-arrow-up"></i>To Top</div>
+  </div>
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6"><a href="#" class="brand">Unvc</a>
+          <ul class="contact-info list-unstyled">
+            <li><a href="mailto:sales@landy.com">2021301051114@whu.edu.cn</a></li>
+            <li><a href="tel:123456789">+138 5627 4433</a></li>
+          </ul>
+          <ul class="social-icons list-inline">
+            <li class="list-inline-item"><a href="#" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="Instagram"><i
+                  class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="Pinterest"><i
+                  class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Selected Cases</h5>
+          <ul class="links list-unstyled">
+            <li> <a href="#">Guess Conntect</a></li>
+            <li> <a href="#">Postly</a></li>
+            <li> <a href="#">Iris Vor Arnim</a></li>
+            <li> <a href="#">Yapital</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Selected Cases</h5>
+          <ul class="links list-unstyled">
+            <li> <a href="#">Guess Conntect</a></li>
+            <li> <a href="#">Postly</a></li>
+            <li> <a href="#">Iris Vor Arnim</a></li>
+            <li> <a href="#">Yapital</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Selected Cases</h5>
+          <ul class="links list-unstyled">
+            <li> <a href="#">Guess Conntect</a></li>
+            <li> <a href="#">Postly</a></li>
+            <li> <a href="#">Iris Vor Arnim</a></li>
+            <li> <a href="#">Yapital</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyrights">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <p>&copy; Landy.com. All rights reserved. </p>
+          </div>
+          <div class="col-md-5 text-right">
+            <p><a target="_blank" href="http://www.mobanwang.com/" title="网页模板" class="external">网页模板</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Javascript files-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"> </script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+  <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="js/front.js"></script>
+</body>
+
+</html>

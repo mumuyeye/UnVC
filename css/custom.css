@@ -1,0 +1,73 @@
+/* your styles go here */
+.audio-module {
+    margin: 20px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: -5.665px 9.429px 35px 0px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #656565;
+    line-height: 1.7rem;
+}
+
+.model-name {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #EAB883;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.audio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.audio-item {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+audio {
+    width: 100%;
+    max-width: 300px;
+}
+
+.arrow {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #5989e5;
+    margin: 20px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.audio-item p {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #656565;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.highlight {
+    color: #5989e5;
+}
+
+.audio-module h4 {
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.audio-group {
+    margin-top: 10px;
+}

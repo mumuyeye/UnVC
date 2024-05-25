@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Unvc样例展示</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome CSS-->
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+  <!-- Custom Font Icons CSS-->
+  <link rel="stylesheet" href="css/landy-iconfont.css">
+  <!-- Google fonts - Open Sans-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800">
+  <!-- owl carousel-->
+  <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css">
+  <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css">
+  <!-- theme stylesheet-->
+  <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+  <!-- Custom stylesheet - for your changes-->
+  <link rel="stylesheet" href="css/custom.css">
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="icon" type="image/png"
+    href="img/DALL·E 2024-05-06 10.58.08 - A simple and minimalistic logo design for 'UnVC', a voice anti-spoofing technology, incorporating a scientific and technological aesthetic. The logo s.png">
+  <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+
+<body>
+  <!-- navbar-->
+  <header class="header">
+    <nav class="navbar navbar-expand-lg fixed-top"><a href="index.html" class="navbar-brand">Unvc</a>
+      <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler navbar-toggler-right"><span></span><span></span><span></span></button>
+      <div id="navbarSupportedContent" class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto align-items-start align-items-lg-center">
+          <li class="nav-item"><a href="index.html" class="nav-link link-scroll">主页 </a></li>
+          <li class="nav-item"><a href="text.html" class="nav-link active">样例展示</a></li>
+        </ul>
+        <!-- <div class="navbar-text">
+          <a href="#" data-toggle="modal" data-target="#exampleModal"
+            class="btn btn-primary navbar-btn btn-shadow btn-gradient">Sign Up</a>
+        </div> -->
+      </div>
+    </nav>
+  </header>
+  <!-- Modal-->
+  <section>
+    <div class="container">
+      <div class="row block">
+        <div class="col-lg-9">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./">主页</a></li>
+            <li class="breadcrumb-item">样例展示</li>
+          </ul>
+          <h1>音频防御样例展示</h1>
+            <p class="lead">
+              我们展示了使用 <strong>UnVC 方法防御音频前后</strong>的示例对比，以及<strong>主流 TTS/VC 模型语音转换后</strong>的示例对比。此外，在模型测试部分，我们分别展示了 UnVC
+              方法对<strong>白盒模型</strong>和<strong>黑盒模型</strong>的防御效果。
+            </p>
+        </div>
+      </div>
+      <div class="block">
+        <blockquote class="blockquote">
+          <p class="mb-0">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+            egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien
+            ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean
+            fermentum</p>
+          <footer class="blockquote-footer">Someone famous in
+            <cite title="Source Title">Source Title</cite>
+          </footer>
+        </blockquote>
+      </div>
+      <div class="row block no-margin-bottom">
+        <div class="col-lg-9">
+          <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis
+            egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit
+            amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit
+            amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>,
+            ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis
+            tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+
+        </div>
+      </div>
+        <h2>白盒模型测试</h2>
+        <div class="audio-module">
+          <h2 class="model-name">YourTTS</h2>
+        
+          <h4>原始音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>男声 1</p>
+              <audio controls>
+                <source src="examples_audios/ori/p311_005.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>男声 2</p>
+              <audio controls>
+                <source src="original_male_2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>女声 1</p>
+              <audio controls>
+                <source src="original_female_1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>女声 2</p>
+              <audio controls>
+                <source src="original_female_2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        
+          <div class="arrow">↓</div>
+        
+          <h4><span class="highlight">UnVC</span>保护音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>男声 1</p>
+              <audio controls>
+                <source src="examples_audios/defend/p311_005-unvc-05151356.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>男声 2</p>
+              <audio controls>
+                <source src="noisy_male_2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>女声 1</p>
+              <audio controls>
+                <source src="noisy_female_1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>女声 2</p>
+              <audio controls>
+                <source src="noisy_female_2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        
+          <div class="arrow">↓</div>
+        
+          <h4><span style="color: #EAB883;">YourTTS</span>转换后音频</h4>
+          <div class="audio-group horizontal">
+            <div class="audio-item">
+              <p>男声 1(<span class="highlight">Unvc后</span>)</p>
+              <audio controls>
+                <source src="examples_audios/vc/yourtts/p311_005-unvc-05151356.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <p>男声 1(原始)</p>
+              <audio controls>
+                <source src="examples_audios/vc/yourtts/p311_005.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>男声 2(<span class="highlight">Unvc后</span>)</p>
+              <audio controls>
+                <source src="converted_male_2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <p>男声 2(原始)</p>
+              <audio controls>
+                <source src="examples_audios/vc/yourtts/p311_005.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>女声 1(<span class="highlight">Unvc后</span>)</p>
+              <audio controls>
+                <source src="converted_female_1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <p>女声 1(原始)</p>
+              <audio controls>
+                <source src="examples_audios/vc/yourtts/p311_005.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+            <div class="audio-item">
+              <p>女声 2(<span class="highlight">Unvc后</span>)</p>
+              <audio controls>
+                <source src="converted_female_2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <p>女声 2(原始)</p>
+              <audio controls>
+                <source src="examples_audios/vc/yourtts/p311_005.wav" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
+          </div>
+        </div>
+        <h2>黑盒模型测试</h2>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6"><a href="#" class="brand">Unvc</a>
+          <ul class="contact-info list-unstyled">
+            <li><a href="mailto:sales@landy.com">Sales@Landy.com</a></li>
+            <li><a href="tel:123456789">+00 123 456 789</a></li>
+          </ul>
+          <ul class="social-icons list-inline">
+            <li class="list-inline-item"><a href="#" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="Instagram"><i
+                  class="fa fa-instagram"></i></a></li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="Pinterest"><i
+                  class="fa fa-pinterest"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Selected Cases</h5>
+          <ul class="links list-unstyled">
+            <li> <a href="#">Guess Conntect</a></li>
+            <li> <a href="#">Postly</a></li>
+            <li> <a href="#">Iris Vor Arnim</a></li>
+            <li> <a href="#">Yapital</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Selected Cases</h5>
+          <ul class="links list-unstyled">
+            <li> <a href="#">Guess Conntect</a></li>
+            <li> <a href="#">Postly</a></li>
+            <li> <a href="#">Iris Vor Arnim</a></li>
+            <li> <a href="#">Yapital</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h5>Selected Cases</h5>
+          <ul class="links list-unstyled">
+            <li> <a href="#">Guess Conntect</a></li>
+            <li> <a href="#">Postly</a></li>
+            <li> <a href="#">Iris Vor Arnim</a></li>
+            <li> <a href="#">Yapital</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyrights">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <p>&copy; Landy.com. All rights reserved. </p>
+          </div>
+          <div class="col-md-5 text-right">
+            <p><a target="_blank" href="http://www.mobanwang.com/" title="网页模板" class="external">网页模板</a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Javascript files-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"> </script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+  <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="js/front.js"></script>
+</body>
+
+</html>
