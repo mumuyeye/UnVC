@@ -37,6 +37,12 @@
             font-weight: bold; /* 加粗文字 */
           }
         </style>
+                <style>
+                  .button span {
+                    letter-spacing: -0.6px; /* 控制字间距，可以根据需要调整 */
+                    font-weight: bold; /* 加粗文字 */
+                  }
+                </style>
         <style>
           .upload-area span {
             letter-spacing: -0.6px; /* 控制字间距，可以根据需要调整 */
@@ -44,12 +50,78 @@
             font-size: 13px;
           }
         </style>
-         <style>
-         
-        </style>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.modal {
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(255, 255, 255,0.4);
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1000;
+}
+
+.modal-content {
+background: rgba(240, 248, 255, 0.8);
+backdrop-filter: blur(10px);
+padding: 30px;
+border-radius: 12px;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+width: 40%;
+min-width: 300px;
+text-align: center;
+font-family: 'Poppins', sans-serif;
+border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.close-button {
+position: absolute;
+top: 10px;
+right: 15px;
+cursor: pointer;
+border: none;
+background: none;
+font-size: 20px;
+color: #FFF;
+}
+
+.close-button:hover {
+color: #ccc;
+}
+
+.progress-bar {
+background-color: #f1f1f1;
+border-radius: 5px;
+overflow: hidden;
+position: relative;
+margin: 20px 0;
+}
+
+.progress-bar-fill {
+height: 20px;
+background-color: #4CAF50;
+border-radius: 5px;
+width: 0%;
+transition: width 0.6s ease;
+display: flex;
+align-items: center;
+justify-content: flex-end;
+}
+
+.progress-bar-text {
+padding-right: 5px;
+color: white;
+font-weight: 600;
+}
+
+  </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>录音转文字</title>
     <style>
       .background-section {
         background-image: url('1.jpg');
@@ -204,7 +276,16 @@
           </div>
           </div>
           
-          
+          <div id="infoModal" class="modal" style="display:none;">
+            <div class="modal-content">
+              <span class="close-button">×</span>
+              <h2>UnVC 防御进度</h2>
+              <div id="modalText"><p>请耐心等待...</p></div>
+              <div class="progress-bar">
+                <div class="progress-bar-fill"><span class="progress-bar-text">0%</span></div>
+              </div>
+            </div>
+          </div>  
         </div>
         <button id="UnVCButton" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 50px; font-weight: bold; letter-spacing: -0.6px;">
           <span>UnVC防御</span>
@@ -300,6 +381,41 @@
   <script>
     let uploadWaveSurfer, downloadWaveSurfer;
 
+    document.getElementById('UnVCButton').addEventListener('click', function() {
+  document.getElementById('infoModal').style.display = 'flex';
+  let modalText = document.getElementById('modalText');
+  modalText.innerHTML = '<p>初始化...</p>';
+  let progressBarFill = document.querySelector('.progress-bar-fill');
+  progressBarFill.style.width = '0%'; // 重置进度条
+  //document.querySelector('.progress-bar-text').textContent = '0%';
+  // 更新进度条和显示信息
+  setTimeout(() => {
+    modalText.innerHTML += '<p>检测音频...</p>';
+    progressBarFill.style.width = '25%';
+    document.querySelector('.progress-bar-text').textContent = '25%';
+  }, 1000);
+  setTimeout(() => {
+    modalText.innerHTML += '<p>抽取音频中...</p>';
+    progressBarFill.style.width = '50%';
+    document.querySelector('.progress-bar-text').textContent = '50%';
+  }, 3000);
+
+  setTimeout(() => {
+    modalText.innerHTML += '<p>应用UnVC防御...</p>';
+    progressBarFill.style.width = '75%';
+
+document.querySelector('.progress-bar-text').textContent = '75%';
+  }, 5000);
+  setTimeout(() => {
+    modalText.innerHTML += '<p>完成！</p>';
+    progressBarFill.style.width = '100%';
+    document.querySelector('.progress-bar-text').textContent = '100%';
+  }, 7000);
+});
+
+document.querySelector('.close-button').addEventListener('click', function() {
+  document.getElementById('infoModal').style.display = 'none';
+});
     document.addEventListener('DOMContentLoaded', function () {
       uploadWaveSurfer = WaveSurfer.create({
     container: '#uploadWaveform',

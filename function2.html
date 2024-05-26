@@ -69,14 +69,26 @@
         border-radius: 10px;
       }
   
+
       .upload-area {
-        padding: 20px;
-        border: 2px dashed #ccc;
-        text-align: center;
-        margin-top: 20px;
-        border-radius: 10px;
-      }
-  
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(205, 230, 238, 0.2);
+    border: 1px dashed rgba(205, 230, 238, 1);
+    min-height: 300px; /* 设置一个最小高度 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
       .upload-area p {
         margin: 10px 0;
       }
@@ -131,92 +143,79 @@
             <li class="breadcrumb-item">音频转换测试</li>
           </ul>
           <h1>音频转换测试</h1>
-          <p class="lead">此功能针对上传的音频,</p>
+          <p class="lead">此功能为音频转换的防御功能测试，您可以在“原始音频”中上传需要被转换的音频，在“目标音色音频”中上传UnVC防御后的音频或视频，经过音频转换功能，体验对抗生成的防御效果。本测试功能支持上传视频格式的文件，我们会对视频中的音频部分进行专门处理，满足您的更多需要！</p>
 
         </div>
       </div>
 
       <div class="audio-manager">
-        <div class="upload-section">
-          <!-- Upload Area -->
-          <div class="upload-area" style="text-align: center; padding: 20px; flex-grow: 1;background-color: rgba(205, 230, 238, 0.2);border: 1px dashed rgba(205, 230, 238, 1);">
-            <input type="file" accept="video/*" id="audioInput" style="display: none;" />
-            
-            <span >将UnVC防御后的音频或视频拖拽至此处 或 点击「上传文件」按钮</span>
-            <span >支持: mp3、wav格式的音频，mp4格式的视频</span>
-            <span >请注意原文件中需要包含清晰的说话人声音</span>
+        <div class="container">
+            <!-- 第一个上传区 -->
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-4">
+                    <div class="upload-area">
+                        <h3 class="title">原始音频</h3>
+                        <input type="file" accept="video/*,audio/*" id="audioInput1" style="display: none;">
+                        <span style="font-size: 15px;">将文件<span style="font-weight: bold;font-size: 15px;">拖拽</span>至此处 或 点击<span style="font-weight: bold;font-size: 15px;">「上传文件」</span>按钮</span>
+                        <span>*支持: mp3、wav格式的音频，mp4、avi格式的视频</span>
+                        <span>*请注意原文件中需要包含清晰的说话人声音</span>
+                        <div id="uploadWaveform1"></div>
+                        <div class="button-group" style="margin-top: 20px;">
+                            <button id="uploadBtn1" onclick="document.getElementById('audioInput1').click();">
+                                <span>上传文件</span>
+                                <div class="liquid"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 现有上传区 -->
+                <div class="col-lg-4">
+                    <div class="upload-area">
+                        <h3 class="title">目标音色音频</h3>
+                        <input type="file" accept="video/*,audio/*" id="audioInput2" style="display: none;">
+                        <span style="font-size: 15px;">将文件<span style="font-weight: bold;font-size: 15px;">拖拽</span>至此处 或 点击<span style="font-weight: bold;font-size: 15px;">「上传文件」</span>按钮</span>
+                        <span>*支持: mp3、wav格式的音频，mp4、avi格式的视频</span>
+                        <span>*请注意原文件中需要包含清晰的说话人声音</span>
+                        <div id="uploadWaveform2"></div>
+                        <div class="button-group" style="margin-top: 20px;">
+                            <button id="uploadBtn2" onclick="document.getElementById('audioInput2').click();">
+                                <span>上传文件</span>
+                                <div class="liquid"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 下载区 -->
+                <div class="col-lg-4">
+                    <div class="upload-area">
+                        <h3 class="title">转换音频</h3>
+                        <span style="font-size: 15px;">请点击<span style="font-weight: bold;font-size: 15px;">「下载文件」</span>按钮保存至本地</span>
+                        
+                        <span>您可点击「播放下载音频」按钮收听生成结果</span>
 
-          <div id="uploadWaveform"></div>
-
-            <div class="button-group" style="margin-top: 20px;">
-              <button id="uploadBtn" onclick="document.getElementById('audioInput').click();">
-                <span>上传文件</span>
-                <div class="liquid"></div>
-              </button>
-              <div id="uploadDropdown" class="dropdown" style="display: none;">
-                <input type="file" accept="video/*" id="fileInput" style="display: none;">
-              </div>
-              <button onclick="playUploadAudio()">
-                <span>播放上传音频</span>
-                <div class="liquid"></div>
-              </button>
+                        <div class="button-group" style="margin-top: 20px;">
+                            <button id="downloadBtn">
+                                <span>下载文件</span>
+                                <div class="liquid"></div>
+                            </button>
+                            <button onclick="playDownloadAudio()">
+                                <span>播放下载音频</span>
+                                <div class="liquid"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
-          
-          
-
-          
-          
-        </div>
-
-        <div class="process-section">
-          <div id="wifi-loader" style="display: none;">
-            <svg class="circle-outer" viewBox="0 0 86 86">
-              <circle class="back" cx="43" cy="43" r="40"></circle>
-              <circle class="front" cx="43" cy="43" r="40"></circle>
-              <circle class="new" cx="43" cy="43" r="40"></circle>
-            </svg>
-            <svg class="circle-middle" viewBox="0 0 60 60">
-              <circle class="back" cx="30" cy="30" r="27"></circle>
-              <circle class="front" cx="30" cy="30" r="27"></circle>
-            </svg>
-            <svg class="circle-inner" viewBox="0 0 34 34">
-              <circle class="back" cx="17" cy="17" r="14"></circle>
-              <circle class="front" cx="17" cy="17" r="14"></circle>
-            </svg>
-          </div>
-        </div>
-
-        <div class="download-section">
-          <div class="upload-area" style="text-align: center; padding: 20px; flex-grow: 1;background-color: rgba(205, 230, 238, 0.2);border: 1px dashed rgba(205, 230, 238, 1);">
-            <input type="file" accept="video/*" id="audioInput" style="display: none;" />
-            
-            <span >音频转换后的音频或视频将会呈现在此处</span><br>
-            <span>请点击「下载文件」按钮保存至本地</span>
-            <span >您可点击「播放下载音频」按钮收听对抗生成结果</span>
-
-            <div id="downloadWaveform"></div>
-
-          <div class="button-group" style="margin-top: 20px;">
-            <button id="downloadBtn">
-              <span>下载文件</span>
+          <!-- 音频转换按钮 -->
+          <button id="UnVCButton" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, -50%); height: 50px; font-weight: bold; letter-spacing: -0.6px;">
+              <span>音频转换</span>
               <div class="liquid"></div>
-            </button>
-            <button onclick="playDownloadAudio()">
-              <span>播放下载音频</span>
-              <div class="liquid"></div>
-            </button>
-          </div>
-          </div>
-          
-          
+          </button>
         </div>
-        <button id="UnVCButton" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); height: 50px; font-weight: bold; letter-spacing: -0.6px;">
-          <span>音频转换</span>
-          <div class="liquid"></div>
-        </button>
-      </div>
-      </div>
+        </div>
+    </div>
+        
 
 
 
